@@ -284,6 +284,12 @@ class Connection:
                     ssl["key"] = ssl_key
                 if ssl_key_password is not None:
                     ssl["password"] = ssl_key_password
+            if ssl is None:
+                ssl = {
+                    "ca": None,
+                    "check_hostname": False,
+                    "verify_mode": False,
+                }
             if ssl:
                 if not SSL_ENABLED:
                     raise NotImplementedError("ssl module not found")
