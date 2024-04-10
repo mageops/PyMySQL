@@ -268,7 +268,7 @@ class Connection:
                     if value:
                         ssl[key] = value
 
-        self.ssl = False
+        self.ssl = SSL_ENABLED
         if not ssl_disabled:
             if ssl_ca or ssl_cert or ssl_key or ssl_verify_cert or ssl_verify_identity:
                 ssl = {
